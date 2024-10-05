@@ -36,8 +36,8 @@ jobs:
           - wheel: "3.x"
           - python-version: "pypy-3.10"
             wheel: "pypy-3.10"
-          - python-version: "graal-24"
-            wheel: "graal-24"
+          - python-version: "graalpy-24"
+            wheel: "graalpy-24"
 
           - runs: ubuntu-latest
           - platform: windows
@@ -48,7 +48,7 @@ jobs:
     steps:
       - name: thing
         run: |
-          echo ${{ matrix.runs }}
-          echo ${{ matrix.python-version }}
+          echo runs ${{ matrix.runs }}
+          echo python ${{ matrix.python-version }}
           echo wheels-${{ matrix.platform }}-${{ matrix.arch }}-${{ matrix.wheel }}
-          echo 
+          test "${{ matrix.runs }}"
