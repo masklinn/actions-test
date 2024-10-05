@@ -47,3 +47,8 @@ jobs:
             
     steps:
       - name: thing
+        run: |
+          echo ${{ matrix.runs }}
+          echo ${{ matrix.python-version }}
+          echo wheels-${{ matrix.platform }}-${{ matrix.arch }}-${{ matrix.wheel }}
+          echo 
